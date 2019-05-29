@@ -1,5 +1,7 @@
+import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+Vue.use(VueRouter);
 // 1. 定义 (路由) 组件。
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }

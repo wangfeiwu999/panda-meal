@@ -6,7 +6,8 @@
       <router-link to="/bar">Go to Bar</router-link>
     </p>
     <router-view></router-view>
-
+=={{count}}==
+<button @click="increment">加1</button>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -16,6 +17,19 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  },
+  methods:{
+    increment() {
+        this.$store.commit({
+          type: 'increment',
+          amount: 1
+        })
+    }
+  },
   components: {
     HelloWorld
   }
