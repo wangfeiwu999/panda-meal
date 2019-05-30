@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header></Header>
     <img alt="Vue logo" src="./assets/logo.png">
     <p>
       <router-link to="/foo">Go to Foo</router-link>
@@ -14,6 +15,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/header/header.vue'
 
 export default {
   name: 'app',
@@ -31,7 +33,8 @@ export default {
     }
   },
   components: {
-    HelloWorld
+    HelloWorld,
+    Header
   }
 }
 </script>
@@ -44,5 +47,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  max-width:420px;
 }
 </style>
