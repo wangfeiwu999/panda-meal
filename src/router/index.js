@@ -2,14 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
+
 // 1. 定义 (路由) 组件。
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+const goods = { template: '<div>商品组件</div>' }
+const ratings = { template: '<div>评论组件</div>' }
+const seller = { template: '<div>商家组件</div>' }
 
 // 2. 定义路由
 const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+	{ path: '*', redirect: '/goods' },
+  { path: '/goods', component: goods },
+  { path: '/ratings', component: ratings },
+  { path: '/seller', component: seller }
 ]
 
 // 3. 创建 router 实例

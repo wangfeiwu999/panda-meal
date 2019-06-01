@@ -1,22 +1,22 @@
 <template>
-  <div id="p-header">
-    这是头
+  <div id="p-footer">
+    这是脚
   </div>
 </template>
 
 <script>
-  const header={
+  const footer={
     props: {
      // msg: String
     }
   }
-  export default header;
+  export default footer;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #p-header{
-    color:red;
+  #p-footer{
+    color:greenyellow;
 		height: 100px;
   }
 </style>
