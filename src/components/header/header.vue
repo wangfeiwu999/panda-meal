@@ -16,12 +16,12 @@
     props: {
      seller: {
 			 type: Object,
-			 required: true
-		 }
+			 required: true,
+		 },
     },
 		created(){
-			console.log(1,this.seller)
-		}
+			console.log(1,this.seller);
+		},
   }
   export default header;
 </script>
