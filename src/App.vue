@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 		<!-- 头部 -->
-    <Header></Header>
+    <Header :seller="seller"></Header>
 		<!-- 导航栏 -->
 		<ul class="nav clearfix">
 			<li class="nav-item">
@@ -19,7 +19,7 @@
 		  <router-view></router-view>
 		</keep-alive>
 		<!-- 底部 -->
-		<Footer/>
+		<Footer></Footer>
 			
 		
 		
@@ -32,13 +32,18 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/header/header.vue'
 import Footer from './components/footer/footer.vue'
 
 
-export default {
+ const App={
   name: 'app',
+	data(){
+		return {
+			seller:{}
+		}
+	},
   computed: {
     /* count () {
       return this.$store.state.count
@@ -56,8 +61,23 @@ export default {
     // HelloWorld,
     Header,
 		Footer
-  }
+  },
+		beforeRouteEnter (to, from, next) {
+			// console.log(to, from, next);
+			// 在渲染该组件的对应路由被 confirm 前调用
+			// 不！能！获取组件实例 `this`
+			// 因为当守卫执行前，组件实例还没被创建
+		},
+		created(){
+			this.$http.get("data.json").then((response) => {
+				if(response.status=='200' && response.data){
+			// console.log('created',response.data);
+					this.seller=response.data.seller;
+				}
+			})
+		}
 }
+export default App;
 </script>
 
 <style>
@@ -67,7 +87,6 @@ export default {
 			-moz-osx-font-smoothing: grayscale;
 			text-align: center;
 			color: #2c3e50;
-			margin-top: 60px;
 			max-width:420px;
 		}
 	.nav-item{
