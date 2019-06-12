@@ -16,7 +16,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #p-footer{
-    color:greenyellow;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width:100%;
 		height: 100px;
+    background-color:greenyellow;
   }
 </style>

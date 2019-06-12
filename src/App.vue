@@ -16,7 +16,7 @@
 		</ul>
 		<!-- 不销毁的DOM -->
 		<keep-alive>
-		  <router-view></router-view>
+		  <router-view class="p-content"></router-view>
 		</keep-alive>
 		<!-- 底部 -->
 		<Footer></Footer>
@@ -88,6 +88,8 @@ export default App;
 			text-align: center;
 			color: #2c3e50;
 			max-width:420px;
+			height: 100%;
+			position: relative;
 		}
 	.nav-item{
 		float: left;
@@ -102,4 +104,13 @@ export default App;
 		height: 100%;
 		background-color: #FF0000;
 	}
+/* 	.p-content{
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		padding: 125px 0 100px 0;
+	} */
 </style>
