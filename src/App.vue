@@ -1,9 +1,9 @@
 <template>
   <div id="app">
 		<!-- 头部 -->
-    <Header :seller="seller"></Header>
+    <!-- <Header :seller="seller"></Header> -->
 		<!-- 导航栏 -->
-		<ul class="nav clearfix">
+		<!-- <ul class="nav clearfix">
 			<li class="nav-item">
 				<router-link to="/goods">商品</router-link>
 			</li>
@@ -13,13 +13,14 @@
 			<li class="nav-item">
 				<router-link to="/seller">商家</router-link>
 			</li>
-		</ul>
+		</ul> -->
 		<!-- 不销毁的DOM -->
-		<keep-alive>
+		<!-- <keep-alive>
 		  <router-view class="p-content"></router-view>
-		</keep-alive>
+		</keep-alive> -->
+		<router-view class="p-content"></router-view>
 		<!-- 底部 -->
-		<Footer></Footer>
+		<!-- <Footer></Footer> -->
 			
 		
 		
@@ -33,15 +34,15 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/header/header.vue'
-import Footer from './components/footer/footer.vue'
+// import Header from './components/header/header.vue'
+// import Footer from './components/footer/footer.vue'
 
 
  const App={
   name: 'app',
 	data(){
 		return {
-			seller:{}
+			// seller:{}
 		}
 	},
   computed: {
@@ -59,8 +60,8 @@ import Footer from './components/footer/footer.vue'
   },
   components: {
     // HelloWorld,
-    Header,
-		Footer
+  //   Header,
+		// Footer
   },
 		beforeRouteEnter (to, from, next) {
 			// console.log(to, from, next);
@@ -69,12 +70,12 @@ import Footer from './components/footer/footer.vue'
 			// 因为当守卫执行前，组件实例还没被创建
 		},
 		created(){
-			this.$http.get("data.json").then((response) => {
-				if(response.status=='200' && response.data){
-			// console.log('created',response.data);
-					this.seller=response.data.seller;
-				}
-			})
+			// this.$http.get("data.json").then((response) => {
+			// 	if(response.status=='200' && response.data){
+			// // console.log('created',response.data);
+			// 		this.seller=response.data.seller;
+			// 	}
+			// })
 		}
 }
 export default App;

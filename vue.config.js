@@ -17,7 +17,8 @@ module.exports = {
 	 * 而页面的访问方式，也由http://localhost:8000/index.html变成了http://localhost:8000/panda/index.html
 	 * 
 	 */
-	publicPath: '/panda/',
+	//publicPath: '/panda/',
+	publicPath: '/',
 
 
 	// 是否在每次保存的时候用eslint-loader检查代码
@@ -33,6 +34,7 @@ module.exports = {
 	configureWebpack: {
 		resolve: {
 			alias: {
+				// dist目录下的是开发版本的vue,部署前需要改成生产版本
 				vue$: 'vue/dist/vue.js'
 			}
 		}
@@ -77,11 +79,12 @@ module.exports = {
 		 * 经自测验证，网上devServer.publicPath会覆盖output.publicPath的说法是扯淡的，根本访问不了。
 		 * 事实上也不建议devServer.publicPath和output.publicPath设成不同，因为要保持本地环境和线网环境的一致性
 		 */
-		publicPath: '/panda/',
+		//publicPath: '/panda/',
+		publicPath: '/',
 		
 		open: process.platform === 'darwin',
 		host: 'localhost',
-		port: 8000,
+		port: 8080,
 		https: false,
 		hotOnly: false,
 		// proxy: "http://localhost:4000", // 设置代理
